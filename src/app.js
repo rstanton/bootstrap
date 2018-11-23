@@ -8,6 +8,7 @@ import Footer from './Footer';
 import Canvas from './Canvas';
 import Banner from './Banner';
 import DiagramTabs from "./DiagramTabs";
+import AppObject from "./AppObject";
 
 export default class App extends React.Component{
     constructor(props){
