@@ -1,22 +1,38 @@
 import React from 'react';
+import ObjectPort from './ObjectPort';
+import contextMenu from 'jquery-contextmenu';
 
-export default class AppObject extends draw2d.SVGFigure{
-    constructor(attr){
+export default class AppObject extends draw2d.shape.basic.Rectangle{
+    constructor(attr) {
         super(attr);
+
+        console.debug(JSON.stringify(attr));
+
+        this.addLabel = this.addLabel.bind(this);
+        this.addPort = this.addPort.bind(this);
+
+        this.addLabel();
+        this.addPort(true);
+        this.addPort(false);
     }
 
-    getSVG(){
-        console.log("Rendering Object");
+    addLabel(){
+        let label = new draw2d.shape.basic.Label();
+        label.setText("test");
+        this.add(label, new draw2d.layout.locator.CenterLocator());
+    }
 
-        let x = "<svg width=\"580\" height=\"400\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
-            " <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->\n" +
-            " <g>\n" +
-            "  <title>Layer 1</title>\n" +
-            "  <rect id=\"svg_1\" height=\"115\" width=\"195\" y=\"102\" x=\"125.5\" stroke-width=\"1.5\" stroke=\"#000\" fill=\"#ffff00\"/>\n" +
-            " </g>\n" +
-            "</svg>";
+    addPort(left){
+        if(left){
+            super.addPort(new ObjectPort(), new draw2d.layout.locator.LeftLocator());
+        }
+        else{
+            super.addPort(new ObjectPort(), new draw2d.layout.locator.RightLocator());
+        }
+    }
 
-        return x;
- 1    }
-
+    onContextMenu(x, y){
+        console.info("Context Menu Requested");
+        $.contextMenu({});
+    }
 }

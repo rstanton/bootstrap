@@ -9,6 +9,7 @@ import Canvas from './Canvas';
 import Banner from './Banner';
 import DiagramTabs from "./DiagramTabs";
 import AppObject from "./AppObject";
+import Droppable from 'jquery-ui/ui/widgets/droppable'
 
 export default class App extends React.Component{
     constructor(props){
@@ -20,7 +21,7 @@ export default class App extends React.Component{
     render() {
         return <div>
             <Header/>
-            <div className={"container-fluid"}>
+            <div id="base" className={"container-fluid"}>
                 <DiagramTabs/>
                 <Footer/>
             </div>

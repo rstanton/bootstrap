@@ -2765,6 +2765,16 @@ isomorphic-fetch@^2.1.1:
     node-fetch "^1.0.1"
     whatwg-fetch ">=0.10.0"
 
+jquery-contextmenu@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/jquery-contextmenu/-/jquery-contextmenu-2.7.1.tgz#12e7f9e51e70d2a43d0d90da835abbca0c0ffc15"
+  integrity sha512-Q+H/bJ2PY7Orf+Qwc8Wr6MIOW/2j9QHS8Cdy3PcGX9C7w9Ausw20wtk2pwVxYUVQugOiiSQUQ9ywAy8x6CY5nA==
+
+jquery-ui@^1.12.1:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.12.1.tgz#bcb4045c8dd0539c134bc1488cdd3e768a7a9e51"
+  integrity sha1-vLQEXI3QU5wTS8FIjN0+dop6nlE=
+
 jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
