@@ -13,7 +13,7 @@ export default class Canvas extends React.Component{
     }
 
     componentDidMount(){
-        this.canvas = new BaseCanvas("canvas",1024,768);
+        this.canvas = new BaseCanvas("canvas");
     }
 
     render(){

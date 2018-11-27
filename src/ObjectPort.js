@@ -4,5 +4,6 @@ export default class ObjectPort extends draw2d.HybridPort{
     }
 
     onConnect(connection){
+        console.debug("Port Connected");
     }
 }

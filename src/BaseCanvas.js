@@ -7,7 +7,11 @@ import AppObject from './AppObject';
  */
 export default class BaseCanvas extends draw2d.Canvas{
     constructor(id, width, height){
-        super(id, width, height);
+        if(width && height)
+            super(id, width, height);
+        else{
+            super(id,$("#"+id).width, $("#"+id).height);
+        }
 
         this.installEditPolicy(new draw2d.policy.canvas.SnapToGridEditPolicy());
         this.installEditPolicy(new CanvasPolicy());

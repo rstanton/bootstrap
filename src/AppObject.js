@@ -1,6 +1,11 @@
 import React from 'react';
 import ObjectPort from './ObjectPort';
-import contextMenu from 'jquery-contextmenu';
+import "jquery-contextmenu/dist/jquery.ui.position";
+import "jquery-contextmenu/dist/jquery.contextMenu";
+import "jquery-contextmenu/dist/jquery.contextMenu.min.css";
+
+
+
 
 export default class AppObject extends draw2d.shape.basic.Rectangle{
     constructor(attr) {
@@ -10,6 +15,7 @@ export default class AppObject extends draw2d.shape.basic.Rectangle{
 
         this.addLabel = this.addLabel.bind(this);
         this.addPort = this.addPort.bind(this);
+        this.onContextMenu = this.onContextMenu.bind(this);
 
         this.addLabel();
         this.addPort(true);
@@ -32,7 +38,28 @@ export default class AppObject extends draw2d.shape.basic.Rectangle{
     }
 
     onContextMenu(x, y){
-        console.info("Context Menu Requested");
-        $.contextMenu({});
+        console.info("Context Menu Requested, "+this.attr("id"));
+        $.contextMenu({
+            selector: "body",
+            events:{
+                hide:function() {
+                    $.contextMenu("destroy");
+                }
+            },
+            callback:function(key,opt) {
+                console.info(key + " selected");
+            },
+            items: {
+                edit: {
+                    name: "Edit",
+                    icon: "fa-edit",
+                },
+                props:{
+                    name: "Properties",
+                }
+            },
+            x:x,
+            y:y
+        });
     }
 }
