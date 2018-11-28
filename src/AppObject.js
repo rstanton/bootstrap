@@ -5,8 +5,6 @@ import "jquery-contextmenu/dist/jquery.contextMenu";
 import "jquery-contextmenu/dist/jquery.contextMenu.min.css";
 
 
-
-
 export default class AppObject extends draw2d.shape.basic.Rectangle{
     constructor(attr) {
         super(attr);
@@ -25,7 +23,7 @@ export default class AppObject extends draw2d.shape.basic.Rectangle{
     addLabel(){
         let label = new draw2d.shape.basic.Label();
         label.setText("test");
-        this.add(label, new draw2d.layout.locator.CenterLocator());
+        this.add(label, new draw2d.layout.locator.BottomLocator());
     }
 
     addPort(left){

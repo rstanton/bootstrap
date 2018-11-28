@@ -2,11 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import Alert from './Alert';
 import Header from './Header';
 import Footer from './Footer';
-import Canvas from './Canvas';
-import Banner from './Banner';
 import DiagramTabs from "./DiagramTabs";
 import AppObject from "./AppObject";
 import Droppable from 'jquery-ui/ui/widgets/droppable'

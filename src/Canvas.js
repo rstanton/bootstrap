@@ -1,7 +1,7 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import BaseCanvas from './BaseCanvas';
-import './Canvas.css';
+import './Canvas.scss';
+import ToolCard from "./toolcard/ToolCard";
 
 export default class Canvas extends React.Component{
     constructor(props){
@@ -10,6 +10,7 @@ export default class Canvas extends React.Component{
         this.componentDidMount = this.componentDidMount.bind(this);
 
         this.canvas = {};
+        console.info("Canvas initialised");
     }
 
     componentDidMount(){
@@ -17,6 +18,8 @@ export default class Canvas extends React.Component{
     }
 
     render(){
-        return <div id="canvas" className={"canvas"}/>;
+        return <div id="canvas" className={"canvas"}>
+            <ToolCard/>
+        </div>;
     }
 }
