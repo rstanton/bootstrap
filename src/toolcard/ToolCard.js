@@ -1,4 +1,5 @@
 import React from 'react';
+import ToolCardItem from './toolCardItem';
 import './ToolCard.scss';
 
 /**
@@ -18,13 +19,21 @@ export default class ToolCard extends React.Component{
     }
 
     render(){
-        return <div id={"toolCard"} className={"toolCard"}>
+        return <div id={"toolCard"} className={"toolCard"} data-type="toolCard">
             <div className="card">
                 <div className="card-body">
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <ul className="list-group list-group-flush">
+                        <ToolCardItem label={"Save"} action={this.saveHandler}/>
+                        <li className="list-group-item">Save</li>
+                        <li className="list-group-item">Objects</li>
+                        <li className="list-group-item">Settings</li>
+                    </ul>
                 </div>
             </div>
         </div>;
+    }
+
+    saveHandler(){
+        console.info("Saving diagram");
     }
 }

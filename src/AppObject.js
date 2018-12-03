@@ -37,7 +37,8 @@ export default class AppObject extends draw2d.shape.basic.Rectangle{
 
     onContextMenu(x, y){
         console.info("Context Menu Requested, "+this.attr("id"));
-        $.contextMenu({
+       /* $.contextMenu({
+
             selector: "body",
             events:{
                 hide:function() {
@@ -57,7 +58,7 @@ export default class AppObject extends draw2d.shape.basic.Rectangle{
                 }
             },
             x:x,
-            y:y
-        });
+            y:y*/
+        //}
     }
 }
