@@ -17,6 +17,7 @@
     "jquery-ui": "^1.12.1",
     "octicons": "^8.0.0",
     "popper.js": "^1.14.4",
+    "pouchdb": "^7.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   },

@@ -1,7 +1,6 @@
 import React from 'react';
-import BaseCanvas from './BaseCanvas';
+import SVGCanvas from './SVGCanvas';
 import './Canvas.scss';
-import ToolCard from "./toolcard/ToolCard";
 
 export default class Canvas extends React.Component{
     constructor(props){
@@ -10,16 +9,16 @@ export default class Canvas extends React.Component{
         this.componentDidMount = this.componentDidMount.bind(this);
 
         this.canvas = {};
-        console.info("Canvas initialised");
+
+        console.debug("Canvas initialised");
     }
 
     componentDidMount(){
-        this.canvas = new BaseCanvas("canvas");
+        this.canvas = new SVGCanvas("canvas");
     }
 
     render(){
         return <div id="canvas" className={"canvas"}>
-            <ToolCard/>
         </div>;
     }
 }

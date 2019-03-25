@@ -1,7 +1,8 @@
 import React from 'react';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import Canvas from "./Canvas";
+import Canvas from "../canvas/Canvas";
+
 
 export default class DiagramTabs extends React.Component{
     constructor(props){
