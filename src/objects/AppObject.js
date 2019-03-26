@@ -10,7 +10,7 @@ export default class AppObject extends draw2d.shape.basic.Rectangle{
         super(attr);
 
         this.addLabel = this.addLabel.bind(this);
-        this.addPort = this.addPort.bind(this);
+        this.addAppPort = this.addAppPort.bind(this);
         this.onContextMenu = this.onContextMenu.bind(this);
 
 
@@ -20,8 +20,6 @@ export default class AppObject extends draw2d.shape.basic.Rectangle{
         });
 
         this.addLabel();
-        this.addPort(true);
-        this.addPort(false);
     }
 
     addLabel(){
@@ -30,13 +28,7 @@ export default class AppObject extends draw2d.shape.basic.Rectangle{
         this.add(label, new draw2d.layout.locator.BottomLocator());
     }
 
-    addPort(left){
-        if(left){
-            super.addPort(new ObjectPort(), new draw2d.layout.locator.LeftLocator());
-        }
-        else{
-            super.addPort(new ObjectPort(), new draw2d.layout.locator.RightLocator());
-        }
+    addAppPort(left){
     }
 
     /**
@@ -49,16 +41,38 @@ export default class AppObject extends draw2d.shape.basic.Rectangle{
 
         $.contextMenu({
             selector: "#canvas",
-            build:function(){
-                console.debug("Destroying any old context menus....");
-                $.contextMenu('destroy','#canvas');
+            events:{
+                    hide:function(){ $.contextMenu( 'destroy', '#canvas'); }
             },
             items:{
                 props: {
-                    name: "App Properties",
+                    name: "Properties",
                     callback:function(){
                         console.debug("Destroying App Context Menu for "+this.id);
                     }.bind(this)
+                },
+                rels:{
+                    name:"Relationships",
+                    callback:function(){
+
+                    }.bind(this)
+                },
+                Port:{
+                    name:"Add Port",
+                    items:{
+                        left:{
+                            name:"Left",
+                            callback: function(){
+                                this.createPort("input");
+                            }.bind(this)
+                        },
+                        right:{
+                            name:"Right",
+                            callback: function(){
+                                this.createPort("output");
+                            }.bind(this)
+                        }
+                    }
                 }
             }
         });

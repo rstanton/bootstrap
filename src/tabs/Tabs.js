@@ -3,6 +3,6 @@ import DiagramTabs from "./DiagramTabs";
 import ObjectDisplay from '../panels/ObjectDisplay';
 export default class Tabs extends Component{
     render(){
-        return <div><ObjectDisplay/><DiagramTabs/></div>;
+        return <div><DiagramTabs/></div>;
     }
 }

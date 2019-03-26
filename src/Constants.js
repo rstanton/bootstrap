@@ -1,10 +1,6 @@
 export const DB = "OBJECTS";
 
 export const OBJECT_SCHEMA = {
-    id: {
-        type: "string",
-        displayName: "ID"
-    },
     name:{
         type:"string",
         displayName:"Name"
@@ -12,19 +8,23 @@ export const OBJECT_SCHEMA = {
     created_by: {
         type: "string",
         displayName: "Created By",
-        description: "Original author of the object"
+        description: "Original author of the object",
+        readOnly: true
     },
     created_date:{
         type:"date",
-        displayName:"Created Date"
+        displayName:"Created Date",
+        readOnly: true
     },
     modified_by:{
         type:"string",
         displayName:"Modified By",
-        description:"Author of the last change"
+        description:"Author of the last change",
+        readOnly: true
     },
-    modifed_date:{
+    modified_date:{
         type:"date",
-        displayName:"Modified Date"
+        displayName:"Modified Date",
+        readOnly: true
     }
 };
