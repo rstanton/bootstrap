@@ -23,7 +23,7 @@ export default class DiagramTabs extends React.Component{
             </nav>
             <div className={"tab-content"} id={"nav-content"}>
                 <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <Canvas/>
+                    <Canvas id={"canvas1"}/>
                 </div>
                 <div className="tab-pane fade" id="new" role="tabpanel" aria-labelledby="nav-home-tab">New</div>
             </div>

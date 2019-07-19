@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Header from './Header';
 import Footer from './Footer';
 import {DB} from './Constants';
+import Draw2DCanvas from './canvas/Draw2DCanvas';
 import {OBJECT_SCHEMA} from './Constants';
 import Tabs from "./tabs/Tabs";
 import Droppable from 'jquery-ui/ui/widgets/droppable'
@@ -18,7 +19,7 @@ export default class App extends React.Component{
         this.state = {
             catalogues: false,
             settings:false,
-            diagrams: true
+            diagrams: true,
         };
 
         this.init();

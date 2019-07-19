@@ -13,10 +13,10 @@ export default class AppObject extends draw2d.shape.basic.Rectangle{
         this.addAppPort = this.addAppPort.bind(this);
         this.onContextMenu = this.onContextMenu.bind(this);
 
-
-
-        this.setUserData({
-            type:"Application"
+        this.attr({
+            userData: {
+                name:attr.name
+            }
         });
 
         this.addLabel();
@@ -24,7 +24,7 @@ export default class AppObject extends draw2d.shape.basic.Rectangle{
 
     addLabel(){
         let label = new draw2d.shape.basic.Label();
-        label.setText(this.getUserData().type);
+        label.setText(this.userData.name);
         this.add(label, new draw2d.layout.locator.BottomLocator());
     }
 
