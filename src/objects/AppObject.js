@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ObjectPort from '../ObjectPort';
 import "jquery-contextmenu/dist/jquery.ui.position";
 import "jquery-contextmenu/dist/jquery.contextMenu";
 import "jquery-contextmenu/dist/jquery.contextMenu.min.css";
@@ -10,7 +9,6 @@ export default class AppObject extends draw2d.shape.basic.Rectangle{
         super(attr);
 
         this.addLabel = this.addLabel.bind(this);
-        this.addAppPort = this.addAppPort.bind(this);
         this.onContextMenu = this.onContextMenu.bind(this);
 
         this.attr({
@@ -28,8 +26,6 @@ export default class AppObject extends draw2d.shape.basic.Rectangle{
         this.add(label, new draw2d.layout.locator.BottomLocator());
     }
 
-    addAppPort(left){
-    }
 
     /**
      * Show the application object context menu....
@@ -40,15 +36,17 @@ export default class AppObject extends draw2d.shape.basic.Rectangle{
         console.debug("App Context Menu Requested");
 
         $.contextMenu({
-            selector: "#canvas",
+            selector: "#"+this.canvas.canvasId,
             events:{
-                    hide:function(){ $.contextMenu( 'destroy', '#canvas'); }
+                    hide:function(){ $.contextMenu( 'destroy', '#'+this.canvas.canvasId); }.bind(this)
             },
             items:{
                 props: {
                     name: "Properties",
                     callback:function(){
-                        console.debug("Destroying App Context Menu for "+this.id);
+                        //@Todo This needs to pass the details of the app that's been clicked across to the modal somehow, then when edited then that app needs to refresh
+                        $('#card-modal').modal({
+                        });
                     }.bind(this)
                 },
                 rels:{

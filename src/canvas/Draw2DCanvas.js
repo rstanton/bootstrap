@@ -13,11 +13,12 @@ export default class Draw2DCanvas extends draw2d.Canvas{
             super(id, $("#" + id).width, $("#" + id).height);
         }
 
+        this.id = id;
+
         this.installEditPolicy(new draw2d.policy.canvas.SnapToGridEditPolicy());
         this.installEditPolicy(new CanvasPolicy());
 
         this.setDropListener = this.setDropListener.bind(this);
-
         this.setDropListener(id);
 
     }
@@ -25,7 +26,8 @@ export default class Draw2DCanvas extends draw2d.Canvas{
     addNewObject(type){
         let a1 = new AppObject({id: "one",
             type:type,
-            name:type});
+            name:type,
+            canvas:this.id});
 
         this.add(a1, 100, 100);
     }
