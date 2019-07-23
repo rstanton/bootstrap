@@ -6,7 +6,7 @@ import AppObject from '../objects/AppObject';
  * reference the canvas's ID
  */
 export default class Draw2DCanvas extends draw2d.Canvas{
-    constructor(id, width, height) {
+    constructor(id, width, height, editor) {
         if (width && height)
             super(id, width, height);
         else {
@@ -14,22 +14,13 @@ export default class Draw2DCanvas extends draw2d.Canvas{
         }
 
         this.id = id;
-
+        this.editor = editor;
         this.installEditPolicy(new draw2d.policy.canvas.SnapToGridEditPolicy());
         this.installEditPolicy(new CanvasPolicy());
 
         this.setDropListener = this.setDropListener.bind(this);
         this.setDropListener(id);
 
-    }
-
-    addNewObject(type){
-        let a1 = new AppObject({id: "one",
-            type:type,
-            name:type,
-            canvas:this.id});
-
-        this.add(a1, 100, 100);
     }
 
     setDropListener(id){

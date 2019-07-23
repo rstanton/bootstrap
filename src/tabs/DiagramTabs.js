@@ -1,6 +1,6 @@
 import React from 'react';
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
+//import 'bootstrap';
+//import 'bootstrap/dist/css/bootstrap.css';
 import Canvas from "../canvas/Canvas";
 
 

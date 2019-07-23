@@ -7,7 +7,7 @@ import Footer from './Footer';
 import {DB} from './Constants';
 import Draw2DCanvas from './canvas/Draw2DCanvas';
 import {OBJECT_SCHEMA} from './Constants';
-import Tabs from "./tabs/Tabs";
+import TabContainer from "./tabs/TabContainer";
 import Droppable from 'jquery-ui/ui/widgets/droppable'
 
 export default class App extends React.Component{
@@ -42,7 +42,7 @@ export default class App extends React.Component{
         return <div>
             <Header/>
             <div id="base" className={"container-fluid"}>
-                <Tabs/>
+                <TabContainer/>
                 <Footer/>
             </div>
         </div>

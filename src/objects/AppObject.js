@@ -11,6 +11,8 @@ export default class AppObject extends draw2d.shape.basic.Rectangle{
         this.addLabel = this.addLabel.bind(this);
         this.onContextMenu = this.onContextMenu.bind(this);
 
+        this.editor = attr.editor;
+
         this.attr({
             userData: {
                 name:attr.name
@@ -45,6 +47,8 @@ export default class AppObject extends draw2d.shape.basic.Rectangle{
                     name: "Properties",
                     callback:function(){
                         //@Todo This needs to pass the details of the app that's been clicked across to the modal somehow, then when edited then that app needs to refresh
+                        //Is this bad? Sets the id of the object to be edited, then displays the modal.
+                        this.editor(this.id);
                         $('#card-modal').modal({
                         });
                     }.bind(this)
