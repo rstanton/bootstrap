@@ -14,7 +14,7 @@
     "bootstrap": "^4.3.1",
     "jquery": "^3.3.1",
     "jquery-contextmenu": "^2.7.1",
-    "jquery-ui": "^1.12.1",
+    "jquery-ui": "^1.13.0",
     "octicons": "^8.0.0",
     "popper.js": "^1.14.7",
     "pouchdb": "^7.0.0",
